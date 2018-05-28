@@ -45,9 +45,19 @@ jobs:
             - checkout
             
             - run: 
-                name: Mysample
+                name: npm test cases
                 command: npm test
                 no_output_timeout: 12m
         
-
+    workflows:
+    version: 2
+    build_and_test:
+        jobs:
+        - build
+        - test:
+            requires:
+                - build
+            filters:
+                branches:
+                only: master
 
