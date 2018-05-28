@@ -34,10 +34,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: 
-          name: Run test cases
-          command: npm test
-          no_output_timeout: 12m
+    #   - run: 
+    #       name: Run test cases
+    #       command: npm test
+    #       no_output_timeout: 12m
       
 
 
