@@ -47,7 +47,7 @@ jobs:
             - run: 
                 name: npm test cases
                 command: npm test
-                no_output_timeout: 12m
+                no_output_timeout: 12m 
         
 # workflows:
 #     version: 2
