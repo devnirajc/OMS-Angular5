@@ -33,6 +33,11 @@ jobs:
                     - node_modules
                 key: v1-dependencies-{{ checksum "package.json" }}
             
+            - run: 
+                name: npm test cases
+                command: npm test
+                no_output_timeout: 12m 
+            
     # run tests!
     test: 
         docker:
