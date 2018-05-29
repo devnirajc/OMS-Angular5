@@ -33,11 +33,6 @@ jobs:
                     - node_modules
                 key: v1-dependencies-{{ checksum "package.json" }}
             
-            - run: 
-                name: npm test cases
-                command: npm test
-                no_output_timeout: 12m 
-            
     # run tests!
     test: 
         docker:
@@ -53,6 +48,18 @@ jobs:
                 name: npm test cases
                 command: npm test
                 no_output_timeout: 12m 
+            
+            - run:
+                name: Generate code coverage 
+                command: './node_modules/.bin/nyc report --reporter=text-lcov'
+            
+            - store_artifacts:
+                path: test-results.xml
+                prefix: tests
+
+            - store_artifacts:
+                path: coverage
+                prefix: coverage
         
 # workflows:
 #     version: 2
