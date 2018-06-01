@@ -2,12 +2,16 @@
   <modelVersion>4.0.0</modelVersion>
   <name>OMS Webapp</name>
   <description>OMS Webapp UI</description>
-
+  <artifactId>oms-ui</artifactId>
+  <packaging>pom</packaging>
+  
   <properties>
     <angular.project.location>oms-webapp</angular.project.location>
     <angular.project.nodeinstallation>node_installation</angular.project.nodeinstallation>
   </properties>
 
+  <build>
+    <plugins>
   <plugin>
     <groupId>com.github.eirslett</groupId>
     <artifactId>frontend-maven-plugin</artifactId>
@@ -78,4 +82,6 @@
       </execution>
     </executions>
   </plugin>
+  </plugins>
+ </build>
 </project>
