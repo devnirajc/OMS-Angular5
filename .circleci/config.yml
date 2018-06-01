@@ -22,9 +22,13 @@ jobs:
         #        - v1-dependencies-
 
             - run: 
-                name: Install local dependencies
+                name: Maven Execution
                 command: mvn package
             
+            - run: 
+                name: List dir
+                command: ls target
+                
             - store_artifacts:
                 path: ~/repo/target/oms-ui.tar.gz                
          #   - save_cache:
