@@ -26,7 +26,7 @@ jobs:
                 command: mvn package
             
             - store_artifacts:
-                path: ~/repo/target/oms-ui-*.tar.gz                
+                path: ~/repo/target/oms-ui.tar.gz                
          #   - save_cache:
          #       paths:
          #           - node_modules
