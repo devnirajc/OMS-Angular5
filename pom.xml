@@ -2,7 +2,9 @@
   <modelVersion>4.0.0</modelVersion>
   <name>OMS Webapp</name>
   <description>OMS Webapp UI</description>
+  <groupId>com.oms</groupId>             
   <artifactId>oms-ui</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   
   <properties>
