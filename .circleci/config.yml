@@ -7,10 +7,7 @@ jobs:
     build:
         docker:
         # specify the version you desire here
-            - image: circleci/node:8.11-browsers
-              environment:
-                    # - DISPLAY=:99
-                    - CHROME_BIN=/usr/bin/google-chrome
+            - image: maven              
 
         working_directory: ~/repo
 
@@ -18,48 +15,48 @@ jobs:
             - checkout
 
         # Download and cache dependencies
-            - restore_cache:
-                keys:
-                - v1-dependencies-{{ checksum "package.json" }}
+        #    - restore_cache:
+        #        keys:
+        #        - v1-dependencies-{{ checksum "package.json" }}
                 # fallback to using the latest cache if no exact match is found
-                - v1-dependencies-
+        #        - v1-dependencies-
 
             - run: 
                 name: Install local dependencies
-                command: npm install
+                command: mvn package
 
-            - save_cache:
-                paths:
-                    - node_modules
-                key: v1-dependencies-{{ checksum "package.json" }}
+         #   - save_cache:
+         #       paths:
+         #           - node_modules
+         #       key: v1-dependencies-{{ checksum "package.json" }}
             
     # run tests!
-    test: 
-        docker:
+    #test: 
+    #    docker:
         # specify the version you desire here
-            - image: circleci/node:8.11-browsers
-              environment:
+    #       - image: circleci/node:8.11-browsers
+    #          environment:
                     # - DISPLAY=:99
-                    - CHROME_BIN=/usr/bin/google-chrome
-        steps:
-            - checkout
+    #                - CHROME_BIN=/usr/bin/google-chrome
+    #    steps:
+    #        - checkout
             
-            - run: 
-                name: npm test cases
-                command: npm test
-                no_output_timeout: 12m 
+    #        - run: 
+    #            name: npm test cases
+    #            command: npm test
+    #            no_output_timeout: 12m 
             
-            - run:
-                name: Generate code coverage 
-                command: 'npm run coverage'
+    #        - run:
+    #            name: Generate code coverage 
+    #            command: 'npm run coverage'
             
-            - store_artifacts:
-                path: test-results.xml
-                prefix: tests
+    #        - store_artifacts:
+    #            path: test-results.xml
+    #            prefix: tests
 
-            - store_artifacts:
-                path: coverage
-                prefix: coverage
+    #        - store_artifacts:
+    #            path: coverage
+    #            prefix: coverage
         
 # workflows:
 #     version: 2
