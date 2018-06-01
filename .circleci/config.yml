@@ -27,7 +27,7 @@ jobs:
             
             - run: 
                 name: List dir
-                command: ls target
+                command: ls
                 
             - store_artifacts:
                 path: ~/repo/target/oms-ui.tar.gz                
