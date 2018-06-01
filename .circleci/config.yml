@@ -30,7 +30,10 @@ jobs:
                 command: ls
                 
             - store_artifacts:
-                path: ~/repo/target/oms-ui.tar.gz                
+                path: ~/repo/target/oms-ui.tar.gz 
+             
+            - store_test_results:
+                path: junitreport
          #   - save_cache:
          #       paths:
          #           - node_modules
