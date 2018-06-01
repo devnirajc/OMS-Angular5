@@ -22,7 +22,7 @@ module.exports = function (config) {
     angularCli: {
       environment: 'dev'
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'junit'],
     junitReporter: {
       outputDir: 'junitreport', // results will be saved as $outputDir/$browserName.xml
       outputFile: junitreport.xml, // if included, results will be saved as $outputDir/$browserName/$outputFile
