@@ -3,10 +3,11 @@
 		<format>tar.gz</format>
 	</formats>
 	<id>oms-ui</id>
-	<!--<includeBaseDirectory>false</includeBaseDirectory>-->
+	<includeBaseDirectory>false</includeBaseDirectory>
 	<fileSets>
 		<fileSet>
-			<directory>dist</directory>			
+			<directory>dist</directory>
+			<outputDirectory>/</outputDirectory>			
 		</fileSet>		
 	</fileSets>
 </assembly>
